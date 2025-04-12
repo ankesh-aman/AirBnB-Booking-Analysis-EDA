@@ -4,7 +4,9 @@
 
 ## 📌 Project Type
 Exploratory Data Analysis (EDA)
+
 **Contribution**: Individual Project
+
 **Author**: Ankesh Aman
 
 ## 📊 Project Summary
@@ -34,7 +36,7 @@ Through this project, I:
 
 Raw data often contains inconsistencies and errors that can skew analysis. To ensure accuracy and insightfulness, the dataset underwent a comprehensive cleaning process, which included the following steps:
 
-1. Missing Values Handling
+1. **Missing Values Handling**
 
   * Checked for missing values across all columns using isnull().sum().
   
@@ -42,12 +44,12 @@ Raw data often contains inconsistencies and errors that can skew analysis. To en
   
   * For example, listings with missing host_name or reviews were carefully analyzed and dropped if irrelevant.
 
-2. Data Type Conversion
+2. **Data Type Conversion**
   * Converted columns like last_review to proper datetime format
   
   * Ensured numeric fields such as price, minimum_nights, number_of_reviews, and availability_365 were correctly typed
 
-3. Duplicate and Irrelevant Records
+3. **Duplicate and Irrelevant Records**
   * Removed any duplicate entries to prevent skewed counts
   
   * Filtered out listings with unrealistic values, such as:
@@ -56,12 +58,12 @@ Raw data often contains inconsistencies and errors that can skew analysis. To en
     
     - Listings with 0 availability or excessive minimum night stays (over 365 days)
 
-4. Outlier Detection & Removal
+4. **Outlier Detection & Removal**
   * Used visualization tools like boxplots to detect outliers in numerical columns
   
   * Capped or removed extreme outliers using percentile thresholds to ensure fair distribution for modeling and visualization
 
-5. Data Filtering
+5. **Data Filtering**
   * Focused on listings within valid New York City boroughs
   
   * Filtered columns to retain only relevant features for the analysis
@@ -145,18 +147,23 @@ These insights could be useful not only for travelers deciding where to stay but
 
 
 
-🚀 How to Run This Project
+## 🚀 How to Run This Project
 
-1. Clone the repository
-`git clone https://github.com/yourusername/Airbnb-Booking-Analysis.git`
+Follow these steps to run the project locally on your machine:
 
-2. Navigate to the project folder
+1. **Clone the Repository**
 
-`cd Airbnb-Booking-Analysis`
+```
+git clone https://github.com/yourusername/Airbnb-Booking-Analysis.git
+```
 
-3. Launch the notebook using Jupyter
+2. **Navigate to the project folder**
 
-`jupyter notebook AirBnB__Booking_Analysis_EDA.ipynb`
+```cd Airbnb-Booking-Analysis```
+
+3. **Launch the notebook using Jupyter**
+
+```jupyter notebook AirBnB__Booking_Analysis_EDA.ipynb```
 
 
 ## 🙌 Acknowledgements
