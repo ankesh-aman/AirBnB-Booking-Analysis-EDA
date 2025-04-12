@@ -1,44 +1,170 @@
-# AirBnB-Booking-Analysis-EDA
+# 🏠 AirBnB-Booking-Analysis-EDA
 
 ![airbnb_booking](https://github.com/ankesh-aman/AirBnB-Booking-Analysis-EDA/assets/170477956/953c182d-3973-4b8f-9272-eaa5b535bd38)
 
-## Problem statement-
+## 📌 Project Type
+Exploratory Data Analysis (EDA)
+**Contribution**: Individual Project
+**Author**: Ankesh Aman
 
-* What are the most popular neighborhoods for Airbnb rentals in New York City? How do prices and availability vary by neighborhood?
+## 📊 Project Summary
 
-* How has the Airbnb market in New York City changed over time? Have there been any significant trends in terms of the number of listings, prices, or occupancy rates?
+This project presents an in-depth exploratory data analysis (EDA) of Airbnb bookings in New York City, aimed at uncovering key insights that influence listing prices and availability. The analysis is designed to support travelers, hosts, and business stakeholders with data-driven insights for better decision-making.
 
-* Are there any patterns or trends in terms of the types of properties that are being rented out on Airbnb in New York City? Are certain types of properties more popular or more expensive than others?
+Through this project, I:
 
-* Are there any factors that seem to be correlated with the prices of Airbnb rentals in New York City?
+* Explored and cleaned the Airbnb dataset for quality and consistency
 
-* The best area in New York City for a host to buy property at a good price rate and in an area with high traffic ?
+* Identified outliers and handled missing values
 
-* How do the lengths of stay for Airbnb rentals in New York City vary by neighborhood? Do certain neighborhoods tend to attract longer or shorter stays?
+* Conducted detailed statistical summaries and visual analysis
 
-* How do the ratings of Airbnb rentals in New York City compare to their prices? Are higher-priced rentals more likely to have higher ratings?
+* Discovered trends, patterns, and relationships between variables (like room types, price, reviews, location, etc.)
 
-* Find the total numbers of Reviews and Maximum Reviews by Each Neighborhood Group.
 
-* Find Most reviewed room type in Neighborhood groups per month.
+## ✅ Key Goals:
+* Understand what factors influence Airbnb pricing
 
-* Find Best location listing/property location for travelers.
+* Analyze availability trends across neighborhoods
 
-* Find also best location listing/property location for Hosts.
+* Derive insights for both guests and hosts using data visualization
 
-* Find Price variations in NYC Neighborhood groups.
 
-## Project Summary-
-* The purpose of the analysis: understanding the factors that influence Airbnb prices in New York City, or identifying patterns of all variables and Our analysis provides useful information for travelers and hosts in the city and also provides some best insights for Airbnb business.
+## 🧹 Data Cleaning & Preparation
 
-* This project involved exploring and cleaning a dataset to prepare it for analysis. The data exploration process involved identifying and understanding the characteristics of the data, such as the data types, missing values, and distributions of values. The data cleaning process involved identifying and addressing any issues or inconsistencies in the data, such as errors, missing values, or duplicate records and remove outliers.
+Raw data often contains inconsistencies and errors that can skew analysis. To ensure accuracy and insightfulness, the dataset underwent a comprehensive cleaning process, which included the following steps:
 
-* Through this process, we were able to identify and fix any issues with the data, and ensure that it was ready for further analysis. This is an important step in any data analysis project, as it allows us to work with high-quality data and avoid any potential biases or errors that could affect the results. The clean and prepared data can now be used to answer specific research.
+1. Missing Values Handling
 
-* Once the data has been cleaned and prepared, now begin exploring and summarizing it with describe the data and creating visualizations, and identifying patterns and trends in the data. in explore the data, may develop the relationships between different variables or the underlying causes of certain patterns or trends and other methods.
+  * Checked for missing values across all columns using isnull().sum().
+  
+  * Columns with a significant amount of missing data were either dropped or imputed appropriately.
+  
+  * For example, listings with missing host_name or reviews were carefully analyzed and dropped if irrelevant.
 
-* Using data visualization to explore and understand patterns in Airbnb data. We created various graphs and charts to visualize the data, and wrote observations and insights below each one to help us better understand the data and identify useful insights and patterns.
+2. Data Type Conversion
+  * Converted columns like last_review to proper datetime format
+  
+  * Ensured numeric fields such as price, minimum_nights, number_of_reviews, and availability_365 were correctly typed
 
-* Through this process, we were able to uncover trends and relationships in the data that would have been difficult to identify through raw data alone, for example factors affecting prices and availability. We found that minimum nights, number of reviews, and host listing count are important for determining prices, and that availability varies significantly across neighborhoods. Our analysis provides useful information for travelers and hosts in the city.
+3. Duplicate and Irrelevant Records
+  * Removed any duplicate entries to prevent skewed counts
+  
+  * Filtered out listings with unrealistic values, such as:
+  
+    - Prices of $0 or extremely high values (treated as outliers)
+    
+    - Listings with 0 availability or excessive minimum night stays (over 365 days)
 
-* The observations and insights we identified through this process will be useful for future analysis and decision-making related to Airbnb. and also Our analysis provides useful information for travelers and hosts in the city.
+4. Outlier Detection & Removal
+  * Used visualization tools like boxplots to detect outliers in numerical columns
+  
+  * Capped or removed extreme outliers using percentile thresholds to ensure fair distribution for modeling and visualization
+
+5. Data Filtering
+  * Focused on listings within valid New York City boroughs
+  
+  * Filtered columns to retain only relevant features for the analysis
+  
+  * With a clean, structured dataset, the foundation was set for a meaningful and bias-free exploration.
+
+
+## 🛠 Tools & Technologies Used
+
+| Tool / Library       | Description                             |
+|----------------------|-----------------------------------------|
+| Python               | Core programming language for analysis  |
+| Pandas               | Data cleaning, manipulation, and analysis |
+| NumPy                | Numerical operations and array handling |
+| Matplotlib           | Static visualizations (plots, charts)   |
+| Seaborn              | Statistical data visualization           |
+| Jupyter Notebook     | Interactive code and narrative writing  |
+
+
+
+## 📈 Insights & Observations
+
+The EDA revealed several compelling insights about how Airbnb operates in New York City, providing a mix of business intelligence and user experience understanding.
+
+### 🏘 Neighborhood & Location Impact
+  * Manhattan is the most expensive and highly saturated borough with a significant number of listings
+  
+  * Brooklyn is more affordable yet still popular among travelers
+  
+  * Staten Island and Bronx have the least number of listings and are often overlooked, but they offer more budget-friendly options
+
+### 🛏 Room Type vs Price
+  * Entire homes/apartments have the highest average prices, ideal for families and long-term stays
+  
+  * Private rooms offer a balanced trade-off between privacy and cost, making them attractive to solo travelers
+  
+  * Shared rooms are the least common and cheapest, often priced under $50
+
+### 📆 Availability Trends
+  * Listings with availability_365 = 0 were removed as they indicate inactive or placeholder listings
+  
+  * Hosts with multiple listings often have greater availability but less frequent reviews, hinting at commercial property management
+
+### 💵 Price Distribution & Influencing Factors
+* Majority of listings fall under $200 per night
+
+* Outliers above $500 were treated as luxury or boutique properties, skewing the average price upwards
+
+* Price tends to correlate with:
+
+  - Room type
+  
+  - Location
+  
+  - Minimum nights
+  
+  - Host listing count
+
+### 📝 Reviews & Host Behavior
+* Listings with a high number of reviews tend to be lower-priced but consistently booked
+
+* Hosts with multiple properties show more professional behavior but sometimes less personalized guest engagement
+
+### 🔍 Correlation Highlights
+Weak but visible correlation between:
+
+  * Availability & Number of reviews (more availability may increase exposure)
+  
+  * Minimum nights & Price (longer stays may influence pricing strategy)
+
+### 📊 Visualizations Used
+  * Box plots: Outlier detection in price, minimum nights
+  
+  * Heatmaps: Showed correlation between numerical variables
+  
+  * Bar charts: Distribution of listings across neighborhoods and room types
+  
+  * Scatter plots: Price vs other variables (e.g., reviews, availability)
+  
+These insights could be useful not only for travelers deciding where to stay but also for Airbnb hosts and business strategists optimizing listing strategies, pricing, and service offerings.
+
+
+
+🚀 How to Run This Project
+
+1. Clone the repository
+`git clone https://github.com/yourusername/Airbnb-Booking-Analysis.git`
+
+2. Navigate to the project folder
+
+`cd Airbnb-Booking-Analysis`
+
+3. Launch the notebook using Jupyter
+
+`jupyter notebook AirBnB__Booking_Analysis_EDA.ipynb`
+
+
+## 🙌 Acknowledgements
+
+Thanks to Airbnb and open data platforms for providing the dataset. This project is a part of my Capstone Submission to demonstrate data analysis, visualization, and storytelling skills.
+
+
+
+
+
+
