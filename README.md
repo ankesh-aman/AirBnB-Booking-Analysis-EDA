@@ -159,11 +159,15 @@ git clone https://github.com/yourusername/Airbnb-Booking-Analysis.git
 
 2. **Navigate to the project folder**
 
-```cd Airbnb-Booking-Analysis```
+```
+cd Airbnb-Booking-Analysis
+```
 
 3. **Launch the notebook using Jupyter**
 
-```jupyter notebook AirBnB__Booking_Analysis_EDA.ipynb```
+```
+jupyter notebook AirBnB__Booking_Analysis_EDA.ipynb
+```
 
 
 ## 🙌 Acknowledgements
